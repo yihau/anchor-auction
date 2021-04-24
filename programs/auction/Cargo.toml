@@ -1,0 +1,17 @@
+[package]
+description = "Anchor Auction Example"
+edition = "2018"
+name = "anchor-auction-example"
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "auction"
+
+[features]
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+
+[dependencies]
+anchor-lang = "0.4.4"
+anchor-spl = "0.4.4"
