@@ -113,14 +113,14 @@ describe("start auction", () => {
 
     let emptyPubkey = new anchor.web3.PublicKey();
 
-    const accountAccount = await program.account.auction(auction.publicKey);
-    assert.ok(accountAccount.ongoing);
-    assert.ok(accountAccount.seller.equals(seller.publicKey));
-    assert.ok(accountAccount.itemHolder.equals(itemHolderPubkey));
-    assert.ok(accountAccount.currencyHolder.equals(currencyHolderPubkey));
-    assert.ok(accountAccount.bidder.equals(seller.publicKey));
-    assert.ok(accountAccount.refundReceiver.equals(emptyPubkey));
-    assert.ok(accountAccount.price == 1000);
+    const auctionAccount = await program.account.auction(auction.publicKey);
+    assert.ok(auctionAccount.ongoing);
+    assert.ok(auctionAccount.seller.equals(seller.publicKey));
+    assert.ok(auctionAccount.itemHolder.equals(itemHolderPubkey));
+    assert.ok(auctionAccount.currencyHolder.equals(currencyHolderPubkey));
+    assert.ok(auctionAccount.bidder.equals(seller.publicKey));
+    assert.ok(auctionAccount.refundReceiver.equals(emptyPubkey));
+    assert.ok(auctionAccount.price == 1000);
   });
 
   it("close a auction which no one bid", async () => {
